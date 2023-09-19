@@ -26,7 +26,7 @@ Upload.IA é uma aplicação web que propõe descrições e títulos de vídeos 
 
 * Geração de título de vídeo para o Youtube (IA)
 * Geração de descrição de vídeo para o Youtube (IA)
-* Toogle de temas para estilzar a página (mode Light e Dark)
+* Toogle de temas para estilizar a página (modo :butterfly:Light e :bat:Dark)
 * Modo responsivo para se adaptar a smartphones, tablets, laptops e smart tvs
 
 
