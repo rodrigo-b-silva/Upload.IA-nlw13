@@ -96,47 +96,47 @@ export function VideoInputForm(props: VideoInputFormProps) {
 
   return (
     <form onSubmit={handleUploadVideo} className='space-y-6'>
-        <label
-          htmlFor="video"
-          className='relative border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5'
-        >
-          {videoFile ? (
-            <video src={previewURL} controls={false} className="pointer-events-none absolute inset-0" />
-          ) : (
-            <>
-              <FileVideo className='w-4 h-4' />
-              Selecione um vídeo
-            </>
-          )}
-        </label>
-        <input type="file" name="video" id="video" accept='video/mp4' className='sr-only' onChange={handleFileSelected} />
+      <label
+        htmlFor="video"
+        className='relative border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5'
+      >
+        {videoFile ? (
+          <video src={previewURL} controls={false} className="pointer-events-none absolute inset-0" />
+        ) : (
+          <>
+            <FileVideo className='w-4 h-4' />
+            Selecione um vídeo
+          </>
+        )}
+      </label>
+      <input type="file" name="video" id="video" accept='video/mp4' className='sr-only' onChange={handleFileSelected} />
 
-        <Separator />
+      <Separator />
 
-        <div className='space-y-2'>
-          <Label htmlFor="transcription_prompt">Prompt de transcrição</Label>
-          <Textarea
-            ref={promptInputRef}
-            disabled={status !== 'waiting'}
-            id="transcription_prompt"
-            className='h-20 leading-relaxed resize-none'
-            placeholder='Inclua palavras-chave mencionadas no vídeo separadas por vírgula (,)'
-          />
-        </div>
-
-        <Button
-          data-success={ status === 'success'}
+      <div className='space-y-2'>
+        <Label htmlFor="transcription_prompt">Prompt de transcrição</Label>
+        <Textarea
+          ref={promptInputRef}
           disabled={status !== 'waiting'}
-          type="submit"
-          className='w-full data-[success=true]:bg-emerald-800'
-        >
-          {status === 'waiting' ? (
-            <>
-              Carregar vídeo
-              <Upload className='w-4 h-4 ml-2' />
-            </>
-          ) : statusMessage[status]}
-        </Button>
-      </form>
+          id="transcription_prompt"
+          className='h-20 leading-relaxed resize-none'
+          placeholder='Inclua palavras-chave mencionadas no vídeo separadas por vírgula (,)'
+        />
+      </div>
+
+      <Button
+        data-success={ status === 'success'}
+        disabled={status !== 'waiting'}
+        type="submit"
+        className='w-full data-[success=true]:bg-emerald-800'
+      >
+        {status === 'waiting' ? (
+          <>
+            Carregar vídeo
+            <Upload className='w-4 h-4 ml-2' />
+          </>
+        ) : statusMessage[status]}
+      </Button>
+    </form>
   )
 }

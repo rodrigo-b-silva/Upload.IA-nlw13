@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@/layout/theme-provider"
 import { Header } from "./components/header";
-import { FileVideo, Upload, Wand2 } from 'lucide-react'
+import { Wand2 } from 'lucide-react'
 import { Button } from "./components/ui/button";
 import { Separator } from './components/ui/separator';
 import { Textarea } from './components/ui/textarea';
@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useCompletion } from 'ai/react'
 
 export function App() {
+  const apiUrl = import.meta.env.VITE_API_URL
   const [temperature, setTemperature] = useState(0.5)
   const [videoId, setVideoId] = useState<string | null>(null)
 
@@ -22,9 +23,9 @@ export function App() {
     handleInputChange,
     handleSubmit,
     completion,
-    isLoading
+    isLoading,
   } = useCompletion({
-    api: 'http://localhost:3333/ai/complete',
+    api: `${apiUrl}/ai/complete`,
     body: {
       videoId,
       temperature
@@ -38,8 +39,8 @@ export function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className='min-h-screen flex flex-col'>
         <Header />
-        <div className='flex-1 p-6 flex gap-6'>
-          <div className='flex-1 flex flex-col gap-4'>
+        <div className='flex-1 p-6 gap-6 md:flex'>
+          <div className='w-auto mb-4 flex flex-col gap-4 md:flex-1'>
             <div className='grid grid-rows-2 gap-4 flex-1'>
               <Textarea
                 className='resize-none p-4 leading-relaxed'
@@ -58,7 +59,7 @@ export function App() {
               Lembre-se: você pode utilizar a variável <code className='text-green-400'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
             </p>
           </div>
-          <aside className='w-80 space-y-6'>
+          <aside className='w-auto space-y-6 md:w-80'>
             <VideoInputForm onVideoUploaded={setVideoId} />
             <Separator />
 
@@ -106,6 +107,7 @@ export function App() {
                 <Wand2 className='w-4 h-4 ml-2' />
               </Button>
             </form>
+
           </aside>
         </div>
       </div>
