@@ -68,8 +68,9 @@ $ npm run dev
 
 
 <h2 id="upload_ia_layout">:art: Layout</h2>
-https://github-production-user-asset-6210df.s3.amazonaws.com/37749585/271736427-dd219ef6-751a-4007-8a48-8c79006a49db.mp4
-
+<p align="center">
+    <img src="https://github.com/rodrigo-b-silva/Upload.IA-nlw13/blob/main/.github/images/UploadIA_gif.gif" width="900"/>
+</p>
 
 
 <h2 id="upload_ia_desafio">🧠 Desafios</h2>
