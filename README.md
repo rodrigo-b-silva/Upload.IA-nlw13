@@ -68,7 +68,7 @@ $ npm run dev
 
 
 <h2 id="upload_ia_layout">:art: Layout</h2>
-https://github.com/rodrigo-b-silva/Upload.IA-nlw13/assets/37749585/dd219ef6-751a-4007-8a48-8c79006a49db
+https://github-production-user-asset-6210df.s3.amazonaws.com/37749585/271736427-dd219ef6-751a-4007-8a48-8c79006a49db.mp4
 
 
 
