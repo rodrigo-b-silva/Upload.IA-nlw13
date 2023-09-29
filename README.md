@@ -38,6 +38,7 @@ Upload.IA é uma aplicação web que propõe descrições e títulos de vídeos 
 
 <h2 id="instalacao">:fire: Instalação e execução</h2>
 
+
 ```
 # Clone este repositório
 $ git clone git@github.com:rodrigo-b-silva/Upload.IA-nlw13.git
@@ -45,12 +46,11 @@ $ git clone git@github.com:rodrigo-b-silva/Upload.IA-nlw13.git
 # Navegue nas pastas 'api' e 'web' para instalar as depedências:
 $ npm install
 
-# Navegue até a pasta api e informe as variáveis de ambiente:
+# Navegue até a pasta api, crie o .env e informe as variáveis de ambiente:
 $ cp .env.example .env
-
 PORT=
 DATABASE_URL=""
-OPENAI_KEY=""
+OPENAI_KEY=
 
 # Ainda na pasta api, execute o Prisma para criar as tabelas e popular a tabela 'prompts':
 $ npx prisma migrate dev
@@ -59,7 +59,7 @@ $ npx prisma db seed
 # Execute a API do backend:
 $ npm run dev
 
-# Navegue até a pasta web e altere a variável de ambiente no .env com a URL da API:
+# Navegue até a pasta web, crie o .env e altere a variável de ambiente com a URL da API:
 $ cp .env_example .env
 VITE_API_URL=""
 
@@ -69,7 +69,9 @@ $ npm run dev
 
 
 <h2 id="layout">:art: Layout</h2>
-.
+<p align="center">
+    <img src="https://github.com/rodrigo-b-silva/Upload.IA-nlw13/blob/main/.github/images/UploadIA_live.gif" width="900"/>
+</p>
 
 
 <h2 id="desafio">🧠 Desafios</h2>
